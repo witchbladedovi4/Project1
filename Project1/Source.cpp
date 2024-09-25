@@ -5,49 +5,31 @@ int main()
 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	
-	int calc_num1;
-	int calc_num2;
-	char calc_art;
+	int sum_all = 0;
+	int sum_chet = 0;
+	int sum_nechet = 0;
+	int num;
 	while (true)
 	{
-		std::cout << "Певрое число = ";
-		std::cin >> calc_num1;
-		std::cout << "Второе число = ";
-		std::cin >> calc_num2;
-		std::cout << "Действие (+  -  /  *  %) ";
-		std::cin >> calc_art;
-		int otvet_calc_summa = (calc_num1 + calc_num2), otver_calc_raznost = (calc_num1 - calc_num2), otvet_calc_umnojenya = (calc_num1 * calc_num2);
-		double double_calc_num1 = calc_num1, double_calc_num2 = calc_num2, procent = ((double_calc_num1 / 100) * double_calc_num2);
-		if (calc_num2 != 0)
+		std::cout << "Введите число: \n";
+		std::cin >> num;
+		if (num == 0)
 		{
-			if (calc_art == '+')
-			{
-				std::cout << calc_num1 << " + " << calc_num2 << " = " << otvet_calc_summa << "\n";
-			}
-			else if (calc_art == '-')
-			{
-				std::cout << calc_num1 << " - " << calc_num2 << " = " << otver_calc_raznost << "\n";
-			}
-			else if (calc_art == '*')
-			{
-				std::cout << calc_num1 << " * " << calc_num2 << " = " << otvet_calc_umnojenya << "\n";
-			}
-			else if (calc_art == '/')
-			{
-			double otvet_deleniya = double_calc_num1 / double_calc_num2;
-			std::cout << double_calc_num1 << " / " << double_calc_num2 << " = " << otvet_deleniya << "\n";
-			}
-			else if (calc_art == '%')
-			{
-				std::cout << calc_num2 << "% от числа " << calc_num1 << " = " << procent << "\n";
-			}
-			
+			break;
 		}
-		else
+		else if (num % 2 == 0)
 		{
-		std::cout << "Нельзя делить на ноль!" << "\n";
+			sum_chet += num;
 		}
+		else if (num % 2 != 0)
+		{
+			sum_nechet += num;
+		}
+		sum_all += num;
 	}
+	std::cout << "Четные - " << sum_chet << "\n";
+	std::cout << "Нечетные - " << sum_nechet << "\n";
+	std::cout << "Сумма всех - " << sum_all << "\n";
+
 	return 0;
 }
