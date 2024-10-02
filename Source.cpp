@@ -18,7 +18,7 @@ int main()
 	{
 		std::cout << "¬ведите число от 1 до 10 " << "\n";
 		std::cin >> a;
-		if (a >= 0 and a <= 10) 
+		if (a >= 0 && a <= 10) 
 		{
 			arr2[i] = a;
 		}
