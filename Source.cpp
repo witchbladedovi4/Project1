@@ -1,60 +1,61 @@
 #include <iostream>
 #include <Windows.h>
+#include <cstdlib>
 
 
-int RetunrnSum(int a , int b)
+void SetArr(int arr[], int size)
 {
-	return a + b;
-}
-
-int RetuntRaz(int a, int b)
-{
-
-	return a - b;
-}
-
-int ReturnUmn(int a, int b)
-{
-	return a * b;
-}
-
-int ReturnDel(int a, int b)
-{
-	if (b == 0)
+	for (int i = 0; i < size; i++)
 	{
-		std::cout << "NA 0 NE DELITTYA";
-		return 0;
+		arr[i] = rand() % 27 - 8;
 	}
-	else
-	{
-		return a / b;
-	}
-	
-
 }
-
+ void PrintArr(int arr[], int size)
+ {
+	 for (int i = 0; i < size; i++)
+	 {
+		 std::cout << arr[i] << " ";
+	 }
+	 std::cout << "\n";
+ }
+ void MaxArr(int arr[], int size)
+ {
+	 int max = -123;
+	 int i_max{};
+	 for (int i = 0; i < size; i++)
+	 {
+		 if (arr[i] > max) 
+		 {
+			 max = arr[i];
+			 i_max = i+1;
+		 } 
+	 }
+	 std::cout << "Max = " << max << " Pod nomerom " << i_max << "\n";
+ }
+ void MinArr(int arr[], int size)
+ {
+	 int min = 123;
+	 int i_min{};
+	 for (int i = 0; i < size; i++)
+	 {
+		 if (arr[i] < min) 
+		 {
+			 min = arr[i];
+			 i_min = i+1;
+		 }
+	 }
+	 std::cout << "Min = " << min << " Pod nomerom " << i_min << "\n";
+ }
 
 int main()
-{
+{	
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	char choise{};
-	int a{};
-	int b{};
-	std::cout << "Введите 1 число\n";
-	std::cin >> a;
-	std::cout << "Выберите действие + - * /\n";
-	std::cin >> choise;
-	std::cout << "Введите 2 число\n"; 
-	std::cin >> b;
-	if (choise == '+')
-		std::cout << RetunrnSum(a, b);
-	if (choise == '-')
-		std::cout << RetuntRaz(a, b);
-	if (choise == '*')
-		std::cout << ReturnUmn(a, b);
-	if (choise == '/')
-		std::cout << ReturnDel(a, b);
-	
+	const int size = 20;
+	int arr[size];
+	SetArr(arr, size);
+	PrintArr(arr, size);
+	MaxArr(arr, size);
+	MinArr(arr, size);
 	return 0;
 }
