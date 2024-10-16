@@ -2,13 +2,11 @@
 #include <Windows.h>
 #include <cstdlib>
 
-
-
-// Перегруженная функция для вывода массива int
 void Arr(int* arr, int size) 
 {
     std::cout << "Массив int: ";
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i) 
+    {
         std::cout << arr[i] << " ";
     }
     std::cout << "\n";
