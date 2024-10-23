@@ -1,50 +1,34 @@
 #include <iostream>
 #include <Windows.h>
 #include <cstdlib>
+#include <string>
 
-void Arr(int* arr, int size) 
+int main()
 {
-    std::cout << "Массив int: ";
-    for (int i = 0; i < size; ++i) 
-    {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-}
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-void Arr(float* arr, int size)
-{
-    std::cout << "Массив float: ";
-    for (int i = 0; i < size; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-}
-
-void Arr(char* arr, int size)
-{
-    std::cout << "Массив char: ";
-    for (int i = 0; i < size; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-}
-
-
-int main() 
-{
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-
-    int intArray[5] = { 1, 2, 3, 4, 5 };
-    float floatArray[5] = { 1.2f, 5.2f, 1.6f, 6.2f, 8.3f };
-    char charArray[5] = { 'a', 's', '2', 'x', 'd'};
-
-    Arr(intArray, 5);
-    Arr(floatArray, 5);
-    Arr(charArray, 5);
-
-    return 0;
+	std::cout << "Логин: ";
+	std::string login;
+	std::string pas;
+	std::getline(std::cin, login, '\n');
+	std::cout << "\nПароль: ";
+	std::getline(std::cin, pas, '\n');
+	if ((login != "alimpopa") && (pas != "pas22pas"))
+	{
+		std::cout << "\nНе правильно введен логин и пароль\n";
+	}
+	else if (login != "alimpopa")
+	{
+		std::cout << "Не правильно введет логин";
+	}
+	else if (pas != "pas22pas")
+	{
+		std::cout << "Не правильно введет пароль";
+	}
+	else
+	{
+		std::cout << "фывфыфывфыв  фыв фыв фффв";
+	}
+	return 0;
 }
