@@ -8,27 +8,23 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	std::cout << "Логин: ";
+	std::cout << "Р›РѕРіРёРЅ: ";
 	std::string login;
 	std::string pas;
 	std::getline(std::cin, login, '\n');
-	std::cout << "\nПароль: ";
+	std::cout << "\nРџР°СЂРѕР»СЊ: ";
 	std::getline(std::cin, pas, '\n');
-	if ((login != "alimpopa") && (pas != "pas22pas"))
+	if (login.length() > 15 || pas.length() > 15)
 	{
-		std::cout << "\nНе правильно введен логин и пароль\n";
+		std::cout << "limit err";
 	}
-	else if (login != "alimpopa")
+	else if ((login != "alimpopa") || (pas != "pas22pas"))
 	{
-		std::cout << "Не правильно введет логин";
-	}
-	else if (pas != "pas22pas")
-	{
-		std::cout << "Не правильно введет пароль";
+		std::cout << "\nwrong pas/log\n";
 	}
 	else
 	{
-		std::cout << "фывфыфывфыв  фыв фыв фффв";
+		std::cout << "Welcome";
 	}
 	return 0;
 }
